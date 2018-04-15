@@ -12,7 +12,7 @@ export class TabMenuModel {
             {label: 'Menu', icon: 'fa-align-justify', routerLink: ['/menu']},
             {label: 'Accordion', icon: 'fa-folder-open', routerLink: ['/accordion']},
             {label: 'Table', icon: 'fa-table', routerLink: ['/table']},
-            {label: '1 TODO', icon: 'fa-support'},
+            {label: 'Forms', icon: 'fa-support', routerLink: ['/dataform']},
             {label: '2 TODO', icon: 'fa-twitter'}
         ];
 	console.log("items created:n constructor");
