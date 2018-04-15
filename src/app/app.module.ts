@@ -10,6 +10,7 @@ import { PanelModule } from 'primeng/components/panel/panel';
 import { ButtonModule } from 'primeng/components/button/button';
 import { RadioButtonModule } from 'primeng/components/radioButton/radioButton';
 import {TableModule} from 'primeng/table';
+import {InputTextModule} from 'primeng/inputtext';
 
 import { RouterModule, Routes } from '@angular/router';
 import { MenuBarComponent } from './components/menubar/menubar.component';
@@ -18,12 +19,14 @@ import { AccordionComponent } from './components/accordion/accordion.component';
 import { InfoComponent } from './components/info/info.component';
 import { TableComponent } from './components/table/table.component';
 import { CustomerService } from './services/customerService';
+import { DataformComponent } from './components/dataform/dataform.component';
 
 const appRoutes: Routes = [
   { path: 'info', component: InfoComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'accordion', component: AccordionComponent },
   { path: 'table', component: TableComponent },
+  { path: 'dataform', component: DataformComponent },
   { path: '', redirectTo: 'info', pathMatch: 'full' },
   { path: '**', redirectTo: 'info', pathMatch: 'full' },
 ];
@@ -34,6 +37,7 @@ const appRoutes: Routes = [
     MenuComponent,
     AccordionComponent,
     InfoComponent,
+    DataformComponent,
     TableComponent
   ],
   imports: [
@@ -48,6 +52,7 @@ const appRoutes: Routes = [
     MenuModule,
     BrowserAnimationsModule,
     TableModule,
+    InputTextModule,
     RouterModule.forRoot(
 	appRoutes
     )
@@ -55,4 +60,5 @@ const appRoutes: Routes = [
   providers: [CustomerService],
   bootstrap: [MenuBarComponent]
 })
+
 export class AppModule { }
