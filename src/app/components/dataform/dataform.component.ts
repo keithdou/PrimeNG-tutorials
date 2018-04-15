@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-import { DataformModule } from './dataformModule';
+import { DataformModel } from './dataformModel';
 
 @Component({
   selector: 'app-table',
   templateUrl: './dataform.component.html',
-  styleUrls: ['./dataform.component.css']
+  styleUrls: ['./dataform.component.css'],
+  providers: [DataformModel]
 })
 
 export class DataformComponent {
 
-  firstName: string;
-
-  constructor() {}
+  constructor(private dataformModel : DataformModel) {}
 }
 
