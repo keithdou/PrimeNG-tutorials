@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 
-@Injectable
+//@Injectable
 export class DataformModel {
 
-    firstName: string;
+    firstname: string;
+    lastname: string;
 
     disabled: boolean = true;
 

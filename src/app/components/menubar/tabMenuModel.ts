@@ -12,8 +12,8 @@ export class TabMenuModel {
             {label: 'Menu', icon: 'fa-align-justify', routerLink: ['/menu']},
             {label: 'Accordion', icon: 'fa-folder-open', routerLink: ['/accordion']},
             {label: 'Table', icon: 'fa-table', routerLink: ['/table']},
-            {label: 'Forms', icon: 'fa-support', routerLink: ['/dataform']},
-            {label: '2 TODO', icon: 'fa-twitter'}
+            {label: 'Forms', icon: 'fa-wpforms', routerLink: ['/dataform']},
+            {label: 'Miscellaneous', icon: 'fa-twitter', routerLink: ['/miscellaneous']}
         ];
 	console.log("items created:n constructor");
     }

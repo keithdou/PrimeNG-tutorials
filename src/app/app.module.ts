@@ -1,16 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { MenuModule} from 'primeng/menu';
 import { TabMenuModule} from 'primeng/tabmenu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccordionModule } from 'primeng/components/accordion/accordion';
 import { PanelModule } from 'primeng/components/panel/panel';
 import { ButtonModule } from 'primeng/components/button/button';
-import { RadioButtonModule } from 'primeng/components/radioButton/radioButton';
-import {TableModule} from 'primeng/table';
-import {InputTextModule} from 'primeng/inputtext';
+import { RadioButtonModule } from 'primeng/primeng';
+import { TableModule } from 'primeng/table';
+import { InputTextModule } from 'primeng/inputtext';
+import { DialogModule } from 'primeng/dialog';
+import { MessagesModule} from 'primeng/messages';
 
 import { RouterModule, Routes } from '@angular/router';
 import { MenuBarComponent } from './components/menubar/menubar.component';
@@ -20,6 +22,7 @@ import { InfoComponent } from './components/info/info.component';
 import { TableComponent } from './components/table/table.component';
 import { CustomerService } from './services/customerService';
 import { DataformComponent } from './components/dataform/dataform.component';
+import { MiscellaneousComponent } from './components/miscellaneous/miscellaneous.component';
 
 const appRoutes: Routes = [
   { path: 'info', component: InfoComponent },
@@ -27,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'accordion', component: AccordionComponent },
   { path: 'table', component: TableComponent },
   { path: 'dataform', component: DataformComponent },
+  { path: 'miscellaneous', component: MiscellaneousComponent },
   { path: '', redirectTo: 'info', pathMatch: 'full' },
   { path: '**', redirectTo: 'info', pathMatch: 'full' },
 ];
@@ -38,11 +42,13 @@ const appRoutes: Routes = [
     AccordionComponent,
     InfoComponent,
     DataformComponent,
-    TableComponent
+    TableComponent,
+    MiscellaneousComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     TabMenuModule,
     AccordionModule,
@@ -53,6 +59,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     TableModule,
     InputTextModule,
+    DialogModule,
+    MessagesModule,
     RouterModule.forRoot(
 	appRoutes
     )

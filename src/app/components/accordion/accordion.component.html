@@ -1,42 +1,18 @@
 <p>
-================ Accordion  ================
+  Simple example of accordion panel, pretty much the same as the JSF version.
 </p>
-
 <p-accordion>
-  <p-accordionTab header="Salads">
-    Salads...
+  <p-accordionTab header="James Comey">
+    President Donald Trump's decision to fire former FBI director James Comey in May 2017 was later described as perhaps the "biggest mistake in modern political history" by Mr Trump's then advisor Steve Bannon.
   </p-accordionTab>
-  <p-accordionTab header="Pasta">
-    Pasta...
+  <p-accordionTab header="Woolworths">
+   Woolworths checkouts disabled by a nationwide technical glitch are back online, the supermarket says, after an earlier outage forced customers to abandon their shopping in the aisles and some stores to close their doors.
   </p-accordionTab>
-  <p-accordionTab header="Pizza" [selected]="true">
-    <p-radioButton
-      label="Double cheese 🧀🧀"
-      name="pizza"
-      value="double-cheese"
-      [(ngModel)]="pizzaSelection">
-    </p-radioButton><br>
-
-    <p-radioButton
-      label="Anchovy"
-      name="pizza"
-      value="anchovy"
-      [(ngModel)]="pizzaSelection">
-    </p-radioButton><br>
-
-    <p-radioButton
-      label="Meat lover's 🍖"
-      name="pizza"
-      value="meat-lover"
-      [(ngModel)]="pizzaSelection">
-    </p-radioButton>
+  <p-accordionTab header="Callum Hawkins" [selected]="true">
+   Scottish athlete Callum Hawkins has been discharged from hospital a day after he collapsed during the Commonwealth Games marathon and was left on the road without medical attention.
   </p-accordionTab>
 </p-accordion>
 
 <br>
 
-<p-panel header="Extras" *ngIf="pizzaSelection && pizzaSelection.length">
-  🍕 Would you like extra cheese on your pizza?
-  <button pButton type="button" label="Ok, yeah!"></button>
-</p-panel>
 

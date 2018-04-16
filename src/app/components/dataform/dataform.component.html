@@ -1,11 +1,65 @@
-<p>
-  dataform works!
-  <input type="text" pInputText [(ngModel)]="firstName"/>
-</p>
+  <p>
+    <p-messages [(value)]="msgs"></p-messages>
+    
+    <h2>Customer Data Entry Form</h2>
+    
+    <p>
+      <i>Please enter all fields</i> 
+    </p>
+
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit(customerForm.value)">
+      
+      <span style="color:red">*</span>
+      <input type="text" 
+             maxlength="20"
+             size="30"
+             pInputText [(ngModel)]="firstname" 
+             formControlName="firstname"  
+             placeholder="First name"
+             required/>
+      <br/>
+      <span style="color:red">*</span>
+      <input type="text" 
+             maxlength="60"
+             size="30"
+             pInputText [(ngModel)]="lastname" 
+             formControlName="lastname"  
+             placeholder="Last name"
+             required/>
+      <br/>
+      <span style="color:red">*</span>
+      <input type="email" 
+             maxlength="60"
+             size="30"
+             pInputText [(ngModel)]="email" 
+             formControlName="email"  
+             placeholder="Email address"
+             required/>
+      <br/><br/>
+
+      <p-button label="Continue" (onClick)="showDialog()" [disabled]="!customerForm.valid"></p-button>
+    
+      <p-dialog header="New Customer Details" 
+                modal="true"
+                [(visible)]="displayConfirm">
+        Please review details:
+        <br/>
+        <div class="ui-g">
+           <div class="ui-g-6">First name</div>
+           <div class="ui-g-6">{{firstname}}</div>
+           <div class="ui-g-6">Last name</div>
+           <div class="ui-g-6">{{lastname}}</div>
+           <div class="ui-g-6">Email address</div>
+           <div class="ui-g-6">{{email}}</div>
+        </div>
+         <br/>
+        <button pButton type="submit" label="Confirm" [disabled]="!customerForm.valid"></button>
+      </p-dialog>
+    </form>
 <hr/>
 <p>
-Form data to be submitted:
+Button is disabled until all fields entered. Form data can be monitored in real time:
 </p>
 <p>
-{{firstName}}
+Name: {{firstname}}  {{lastname}} Email: {{email}}
 </p>

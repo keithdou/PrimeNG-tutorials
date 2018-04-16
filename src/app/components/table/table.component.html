@@ -1,18 +1,33 @@
 <p>
- A basic table.
+ A basic table. The data is retrieved via a REST service. In the demo version, the data is delivered from the mock json server, using an example json file. 
 </p>
-
+<p>
+ If you don't see any data, make sure you've installed the mock json server and started it from the project root:
+</p>
+<pre>
+ npm install -g json-server
+ json-server --watch mock.json
+</pre>
+<p>
+ The location of the server is defined as an environment property in environemnts/environments.ts. That way, it can be easily changed for environments other than Dev.
+</p>
 <p-table [value]="pictures">
     <ng-template pTemplate="header">
         <tr>
             <th>Id</th>
+            <th>Author</th>
+            <th>Title</th>
             <th>Description</th>
+            <th>Image</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-pic>
         <tr>
             <td>{{pic.id}}</td>
+            <td>{{pic.author}}</td>
+            <td>{{pic.title}}</td>
             <td>{{pic.description}}</td>
+            <td><img src="{{pic.img}}" height="80" width="120"/></td>
         </tr>
     </ng-template>
 </p-table>
