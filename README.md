@@ -15,6 +15,7 @@ npm install -g json-server
 cd to the root directoru of the project.  Install the node_modules and primeng:
 
 npm install
+
 npm install primeng
 
 You should now be good to go.  Startup the mock json server:
