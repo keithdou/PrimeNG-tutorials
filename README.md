@@ -20,7 +20,7 @@ npm install primeng
 
 You should now be good to go.  Startup the mock json server:
 
-json-server --watch myJSONfile.json
+json-server --watch mock.json
 
 ## Development server
 
