@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Install the latest versions of Node.js and npm for your platform. Whilst Node.js also installs npm, it is unlikely to be the latest version, so you should re-install npm with:
 
-npm install npm@latest –g
+npm install -g npm@latest
 
 Install the mock json server:
 

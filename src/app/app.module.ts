@@ -14,6 +14,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
 import { MessagesModule} from 'primeng/messages';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './services/tokenInterceptor';
+
 import { RouterModule, Routes } from '@angular/router';
 import { MenuBarComponent } from './components/menubar/menubar.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -65,7 +68,12 @@ const appRoutes: Routes = [
 	appRoutes
     )
   ],
-  providers: [CustomerService],
+  providers: [CustomerService,
+             {
+              provide: HTTP_INTERCEPTORS,
+              useClass: TokenInterceptor,
+              multi: true
+             }],
   bootstrap: [MenuBarComponent]
 })
 
