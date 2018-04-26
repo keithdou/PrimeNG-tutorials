@@ -15,6 +15,6 @@ export class TabMenuModel {
             {label: 'Forms', icon: 'fa-wpforms', routerLink: ['/dataform']},
             {label: 'Miscellaneous', icon: 'fa-twitter', routerLink: ['/miscellaneous']}
         ];
-	console.log("items created:n constructor");
+	console.log("items created in constructor");
     }
 }
